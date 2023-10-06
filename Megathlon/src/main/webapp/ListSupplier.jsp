@@ -62,9 +62,9 @@
 														id="exampleInputEmail" placeholder="Email">
 												</div>
 												<div class="form-group">
-													<label for="exampleInputSupplier">Contact Number</label> <input
-														type="text" class="form-control" name="supplierContact"
-														id="exampleInputContact" placeholder="Contact Number">
+													<label for="exampleInputSupplier">Contact Number</label> 
+													<input type="text" class="form-control" name="supplierContact"
+														id="exampleInputContact" placeholder="Contact Number" pattern="[0-9]{5-10}">
 												</div>
 												<div class="form-group">
 													<label for="exampleTextLocation">Location</label> <input

@@ -13,9 +13,9 @@
 	crossorigin="anonymous"></script>
 <!-- <link rel="stylesheet" href="css/all.min.css"> -->
 <!-- overlayScrollbars -->
-<link rel="stylesheet" href="css/OverlayScrollbars.min.css">
+<link rel="stylesheet" href="../css/OverlayScrollbars.min.css">
 <!-- Theme style -->
-<link rel="stylesheet" href="css/adminlte.min.css">
+<link rel="stylesheet" href="../css/adminlte.min.css">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 	<!-- Site wrapper -->
@@ -239,14 +239,14 @@
 	<!-- ./wrapper -->
 
 	<!-- jQuery -->
-	<script src="js/jquery.min.js"></script>
+	<script src="../js/jquery.min.js"></script>
 	<!-- Bootstrap 4 -->
-	<script src="js/bootstrap.bundle.min.js"></script>
+	<script src="../js/bootstrap.bundle.min.js"></script>
 	<!-- overlayScrollbars -->
-	<script src="js/jquery.overlayScrollbars.min.js"></script>
+	<script src="../js/jquery.overlayScrollbars.min.js"></script>
 	<!-- AdminLTE App -->
-	<script src="js/adminlte.min.js"></script>
+	<script src="../js/adminlte.min.js"></script>
 	<!-- AdminLTE for demo purposes -->
-	<script src="js/demo.js"></script>
+	<script src="../js/demo.js"></script>
 </body>
 </html>
