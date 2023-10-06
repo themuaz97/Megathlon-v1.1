@@ -58,6 +58,7 @@ public class Supplier extends HttpServlet {
 				{
 					Suppliers supplier = new Suppliers();
 					supplier.setSupplierName(rs.getString("supplierName"));
+					supplier.setSupplierEmail(rs.getString("supplierEmail"));
 					supplier.setSupplierContact(rs.getString("supplierContact"));
 					supplier.setSupplierLocation(rs.getString("supplierLocation"));
 					suppliers.add(supplier);
@@ -78,12 +79,14 @@ public class Supplier extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String name = request.getParameter("supplierName");
+		String email = request.getParameter("supplierEmail");
 		String contact = request.getParameter("supplierContact");
 		String location = request.getParameter("supplierLocation");
 		
 		Suppliers rb = new Suppliers();
 		
 		rb.setSupplierName(name);
+		rb.setSupplierEmail(email);
 		rb.setSupplierContact(contact);
 		rb.setSupplierLocation(location);
 		
