@@ -84,11 +84,11 @@
 										<div class="form-group">
 											<label for="exampleInputQuantity">Quantity</label> <input
 												type="text" name="quantity" class="form-control"
-												id="exampleInputPassword1" placeholder="Enter Quantity">
+												id="exampleInputPassword1" placeholder="Enter Quantity" required>
 										</div>
 										<!-- brand -->
 										<div class="form-group">
-											<label>Brand*</label> <select class="form-control "
+											<label>Brand*</label> <select class="form-control custom-select"
 												name="brand" required>
 												<option value="" disabled selected hidden>Select Brand</option>
 												<%
@@ -106,11 +106,9 @@
 											data-bs-toggle="modal" data-bs-target="#addBrand">Add
 											new brand</button>
 										</div>
-										
-										
 										<!-- supplier list  -->
 										<div class="form-group">
-											<label>Supplier*</label> <select class="form-control"
+											<label>Supplier*</label> <select class="form-control custom-select"
 												name="supplier" required>
 												<option value="" disabled selected hidden>Select Supplier</option>
 												<%
@@ -122,9 +120,9 @@
 												<%
 												}
 												%>
-											
 											</select>
 										</div>
+										
 										<div class="form-group">
 											<label for="exampleInputFile">Product Picture</label>
 											<div class="input-group">

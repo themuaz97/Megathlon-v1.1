@@ -90,8 +90,7 @@ public class AddBrand extends HttpServlet {
 				ex.printStackTrace();
 			}
 			request.setAttribute("BrandList", BrandList);
-			RequestDispatcher rd = request.getRequestDispatcher("CreateProduct.jsp");
-			rd.forward(request, response);
+			response.sendRedirect("/Megathlon/CreateProduct");
 			out.println("</body>");
 			out.println("</html>");
 

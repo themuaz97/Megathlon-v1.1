@@ -229,7 +229,7 @@
 												<div class="col-6">
 													<label>Product name</label> <select id="productSelect"
 														name="product" class="form-control custom-select">
-														<option value="1">Select Product Name</option>
+														<option hidden>Select Product Name</option>
 														<%
 														ArrayList<Product> productlist = (ArrayList<Product>) request.getAttribute("productlist");
 
@@ -239,7 +239,7 @@
 															<%-- value="<%= p.getProductID() %>" --%> 
 														value="<%=p.getProductName()%>"
 															data-supplier="<%=p.getSupplier()%>"
-															data-supplier="<%=p.getSupplier()%>"
+															
 															data-price="<%=p.getPrice()%>"
 															data-quantity="<%=p.getQuantity()%>">
 															<%=p.getProductName()%></option>

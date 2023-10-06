@@ -7,7 +7,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
@@ -16,7 +15,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import com.Megathlon.Beans.Brand;
 import com.Megathlon.Beans.Suppliers;
@@ -133,12 +131,10 @@ public class CreateProduct extends HttpServlet {
 			out.println("</head>");
 			out.println("<body>");
 
-			HttpSession session = request.getSession();
-
-			String productName = request.getParameter("productName").trim();
-			String desc = request.getParameter("description").trim();
-			String price = request.getParameter("price").trim();
-			String quantity = request.getParameter("quantity").trim();
+			String productName = request.getParameter("productName");
+			String desc = request.getParameter("description");
+			String price = request.getParameter("price");
+			String quantity = request.getParameter("quantity");
 			String brand = request.getParameter("brand");
 			String supplier = request.getParameter("supplier");
 			String productImage = request.getParameter("productImage");
@@ -163,7 +159,7 @@ public class CreateProduct extends HttpServlet {
 				Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/megathlon?useSSL=false",
 						"root", "Penangfreeschool1!");
 				Statement stat = con.createStatement();
-
+				
 				stat.executeUpdate(
 						"INSERT INTO product(productId, productName, description, price, quantity, brand, supplier, productImage) values('"
 								+ product.getProductID() + "','" + product.getProductName() + "','" + product.getDescription() + "','"
@@ -187,6 +183,7 @@ public class CreateProduct extends HttpServlet {
 					ProductList.add(products);
 				}
 
+
 			} catch (Exception ex) {
 				ex.printStackTrace();
 			}
@@ -198,8 +195,7 @@ public class CreateProduct extends HttpServlet {
 			// "stdlist.jsp"
 			// rd.forward(request, response);
 			request.setAttribute("ProductList", ProductList);
-			RequestDispatcher rd = request.getRequestDispatcher("ProductsList.jsp");
-			rd.forward(request, response);
+			response.sendRedirect("/Megathlon/ProductList");
 			out.println("</body>");
 			out.println("</html>");
 

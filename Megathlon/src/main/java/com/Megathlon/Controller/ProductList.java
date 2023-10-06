@@ -14,7 +14,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.Megathlon.Beans.Brand;
 import com.Megathlon.Beans.Product;
+import com.Megathlon.Beans.Suppliers;
 
 /**
  * Servlet implementation class SupplierList
@@ -45,6 +47,9 @@ public class ProductList extends HttpServlet {
 			out.println("<body>");
 			
 			ArrayList<Product> ProductList = new ArrayList<>();
+			ArrayList<Brand> brandList = new ArrayList<>();
+			ArrayList<Suppliers> supplierList = new ArrayList<>();
+
 
 			try {
 				
@@ -71,13 +76,46 @@ public class ProductList extends HttpServlet {
 					ProductList.add(product);
 				}
 				
+				// RETRIEVE BRANDLIST
+				query = "SELECT * FROM brand";
+				preparedStatement = con.prepareStatement(query);
+				rs = preparedStatement.executeQuery();
+				while (rs.next()) {
+					
+					int brandID = rs.getInt("brandId");
+					String brandName = rs.getString("brandName");
+					
+					Brand b = new Brand (brandID, brandName);
+					brandList.add(b);
+				}
 				
+				// RETRIEVE SUPPLIERLIST
+				query = "SELECT * FROM supplier";
+				preparedStatement = con.prepareStatement(query);
+				rs = preparedStatement.executeQuery();
+				while (rs.next()) {
+					//add brand to supplierlist
+					int supplierID = rs.getInt("supplierId");
+					String supplierName = rs.getString("supplierName");
+					String supplierContact = rs.getString("supplierContact");
+					String supplierLocation = rs.getString("supplierLocation");
+					
+					Suppliers c = new Suppliers (supplierID, supplierName, supplierContact, supplierLocation);
+					supplierList.add(c);
+				}
+				
+				// Close connection
+				con.close();
+				preparedStatement.close();
+				rs.close();
 
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 			
 			request.setAttribute("ProductList", ProductList);
+			request.setAttribute("BrandList", brandList);
+			request.setAttribute("supplierList", supplierList);
 			RequestDispatcher rd = request.getRequestDispatcher("ProductsList.jsp");
 			rd.forward(request, response);
 			

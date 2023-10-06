@@ -14,7 +14,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.Megathlon.Beans.Brand;
 import com.Megathlon.Beans.Product;
+import com.Megathlon.Beans.Suppliers;
 
 /**
  * Servlet implementation class ProductEdit
@@ -49,7 +51,10 @@ public class ProductEdit extends HttpServlet {
 			out.println("</head>");
 			out.println("<body>");
 
-			ArrayList<Product> ProductList = new ArrayList<>();
+			ArrayList<Brand> brandList = new ArrayList<>();
+			ArrayList<Suppliers> supplierList = new ArrayList<>();
+			
+			Product product = new Product();
 
 			try {
 				int productID = Integer.parseInt(request.getParameter("productID"));
@@ -58,31 +63,68 @@ public class ProductEdit extends HttpServlet {
 				Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/megathlon?useSSL=false",
 						"root", "Penangfreeschool1!");
 
-				// Run query
+				
+				// RETRIEVE PRODUCTLIST
 				String query = "SELECT * FROM product WHERE status = 0 AND productID = " + productID;
-
 				PreparedStatement preparedStatement = con.prepareStatement(query);
-
 				ResultSet rs = preparedStatement.executeQuery();
 
 				while (rs.next()) {
-					Product product = new Product();
-					product.setProductID(rs.getInt("productId"));
-					product.setProductName(rs.getString("productName"));
-					product.setDescription(rs.getString("description"));
-					product.setPrice(rs.getDouble("price"));
-					product.setQuantity(rs.getInt("quantity"));
-					product.setBrand(rs.getString("brand"));
-					product.setSupplier(rs.getString("supplier"));
-					product.setProductImage(rs.getString("productImage"));
-					ProductList.add(product);
+					
+					int id = rs.getInt("productId");
+					String productName = rs.getString("productName");
+					String description = rs.getString("description");
+					Double price = rs.getDouble("price");
+					int quantity = rs.getInt("quantity");
+					String brand = rs.getString("brand");
+					String supplier = rs.getString("supplier");
+					String productImage = rs.getString("productImage");
+					
+					product = new Product (id, productName, description, price, quantity, brand,
+							supplier, productImage);
+					
 				}
-
+				
+				// RETRIEVE BRANDLIST
+				query = "SELECT * FROM brand";
+				preparedStatement = con.prepareStatement(query);
+				rs = preparedStatement.executeQuery();
+				while (rs.next()) {
+					
+					int brandID = rs.getInt("brandId");
+					String brandName = rs.getString("brandName");
+					
+					Brand b = new Brand (brandID, brandName);
+					brandList.add(b);
+				}
+				
+				// RETRIEVE SUPPLIERLIST
+				query = "SELECT * FROM supplier";
+				preparedStatement = con.prepareStatement(query);
+				rs = preparedStatement.executeQuery();
+				while (rs.next()) {
+					//add brand to supplierlist
+					int supplierID = rs.getInt("supplierId");
+					String supplierName = rs.getString("supplierName");
+					String supplierContact = rs.getString("supplierContact");
+					String supplierLocation = rs.getString("supplierLocation");
+					
+					Suppliers c = new Suppliers (supplierID, supplierName, supplierContact, supplierLocation);
+					supplierList.add(c);
+				}
+				
+				// Close connection
+				con.close();
+				preparedStatement.close();
+				rs.close();
+				
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 
-			request.setAttribute("ProductList", ProductList);
+			request.setAttribute("product", product);
+			request.setAttribute("SupplierList", supplierList);
+			request.setAttribute("BrandList", brandList);
 			RequestDispatcher rd = request.getRequestDispatcher("ProductEdit.jsp");
 			rd.forward(request, response);
 
@@ -97,7 +139,7 @@ public class ProductEdit extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		// doPost untuk Update Product
 		response.setContentType("text/html;charset=UTF-8");
 		try (PrintWriter out = response.getWriter()) {
 			out.println("<!DOCTYPE html>");
@@ -108,6 +150,7 @@ public class ProductEdit extends HttpServlet {
 			out.println("<body>");
 
 			ArrayList<Product> ProductList = new ArrayList<>();
+			
 
 			int productID = Integer.parseInt(request.getParameter("productID"));
 			
@@ -132,6 +175,10 @@ public class ProductEdit extends HttpServlet {
 				String query = "UPDATE " + "product "
 						+ "SET productName = ?, description = ?, price = ?, quantity = ?, brand = ?, supplier = ? "
 						+ "WHERE productID = ?";
+				
+				
+				
+				
 
 				PreparedStatement preparedStatement = con.prepareStatement(query);
 				preparedStatement.setString(1, productName);
