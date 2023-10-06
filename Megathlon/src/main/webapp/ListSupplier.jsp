@@ -246,9 +246,14 @@
 														id="exampleInputFirstName" placeholder="First Name">
 												</div>
 												<div class="form-group">
+													<label for="exampleSupplierEmail">Supplier Email</label>
+													<input type="text" class="form-control" name="supplierEmail"
+														id="exampleInputEmail" placeholder="Email">
+												</div>
+												<div class="form-group">
 													<label for="exampleInputSupplier">Contact Number</label> <input
 														type="text" class="form-control" name="supplierContact"
-														id="exampleInputEmail1" placeholder="Contact Number">
+														id="exampleInputContact" placeholder="Contact Number">
 												</div>
 												<div class="form-group">
 													<label for="exampleTextLocation">Location</label> <input
@@ -280,6 +285,7 @@
 									<tr>
 										<th scope="col" style="width: fit-content">#</th>
 										<th scope="col">Name</th>
+										<th scope="col">Email</th>
 										<th scope="col">Contact</th>
 										<th scope="col">Location</th>
 										<th scope="col" style="width: fit-content">Action</th>
@@ -295,6 +301,7 @@
 									<tr>
 										<th scope="row"><%=i + 1%>.</th>
 										<td><%=supplierlist.get(i).getSupplierName()%></td>
+										<td><%=supplierlist.get(i).getSupplierEmail()%></td>
 										<td><%=supplierlist.get(i).getSupplierContact()%></td>
 										<td><%=supplierlist.get(i).getSupplierLocation() %></td>
 										<td>
@@ -325,6 +332,13 @@
 																			name="supplierName"
 																			value="<%=supplierlist.get(i).getSupplierName()%>"
 																			id="exampleInputFirstName" placeholder="First Name">
+																	</div>
+																	<div class="form-group">
+																		<label for="exampleSupplierFirstName">Supplier
+																			Email</label> <input type="text" class="form-control"
+																			name="supplierEmail"
+																			value="<%=supplierlist.get(i).getSupplierEmail()%>"
+																			id="exampleInputEmail" placeholder="Email">
 																	</div>
 																	<div class="form-group">
 																		<label for="exampleInputSupplier">Contact
