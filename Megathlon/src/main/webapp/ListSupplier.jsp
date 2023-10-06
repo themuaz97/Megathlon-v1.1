@@ -64,7 +64,7 @@
 												<div class="form-group">
 													<label for="exampleInputSupplier">Contact Number</label> 
 													<input type="text" class="form-control" name="supplierContact"
-														id="exampleInputContact" placeholder="Contact Number" pattern="[0-9]{5-10}">
+														id="exampleInputContact" placeholder="Contact Number 5-10 numbers" pattern="[0-9]{10}">
 												</div>
 												<div class="form-group">
 													<label for="exampleTextLocation">Location</label> <input
