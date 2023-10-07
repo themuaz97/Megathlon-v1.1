@@ -9,29 +9,19 @@
 	href="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/css/adminlte.min.css">
 <script
 	src="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/js/adminlte.min.js"></script>
+<!-- overlayScrollbars -->
+<link rel="stylesheet" href="css/OverlayScrollbars.min.css">
+<!-- Theme style -->
+<link rel="stylesheet" href="css/adminlte.min.css">
+	
 <meta charset="UTF-8">
 <title>User Profile | Megathlon</title>
 </head>
-<body class="hold-transition sidebar mini">
-
-
-
+<body class="hold-transition sidebar-mini layout-fixed">
 
 	<!-- Wrapper for page  -->
 	<div class="wrapper">
-		<!-- Navbar -->
-		<nav
-			class="main-header navbar navbar-expand navbar-white navbar-light">
-			<!-- Left navbar links -->
-			<ul class="navbar-nav">
-				<li class="nav-item"><a class="nav-link" data-widget="pushmenu"
-					href="#" role="button"><i class="fas fa-bars"></i></a></li>
-				<li class="nav-item d-none d-sm-inline-block"><a
-					href="../jsp/homepage.jsp" class="nav-link">Home</a></li>
-				<li class="nav-item d-none d-sm-inline-block"><a href="#"
-					class="nav-link">Contact</a></li>
-			</ul>
-		</nav>
+		<%@include file="../inc/NavBar.jsp"%>
 
 		<div class="content-wrapper">
 			<!-- Content Header (Page header) -->
@@ -43,7 +33,7 @@
 						</div>
 						<div class="col-sm-6">
 							<ol class="breadcrumb float-sm-right">
-								<li class="breadcrumb-item"><a href="../jsp/homepage.jsp">Home</a></li>
+								<li class="breadcrumb-item"><a href="jsp/homepage.jsp">Home</a></li>
 								<li class="breadcrumb-item active">User Profile</li>
 							</ol>
 						</div>
@@ -148,14 +138,15 @@
 
 
 	</div>
-	<script
-		src="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/js/adminlte.min.js"></script>
 	<!-- jQuery -->
-	<script src="../js/jquery.min.js"></script>
+	<script src="js/jquery.min.js"></script>
 	<!-- Bootstrap 4 -->
-	<script src="../js/bootstrap.bundle.min.js"></script>
+	<script src="js/bootstrap.bundle.min.js"></script>
+	<!-- overlayScrollbars -->
+	<script
+		src="js/jquery.overlayScrollbars.min.js"></script>
 	<!-- AdminLTE App -->
-	<script src="../js/adminlte.min.js"></script>
+	<script src="js/adminlte.min.js"></script>
 </body>
 </html>
 
