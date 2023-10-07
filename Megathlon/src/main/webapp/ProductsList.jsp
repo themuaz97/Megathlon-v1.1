@@ -231,7 +231,7 @@
 												<td><%=ProductList.get(i).getBrand()%></td>
 												<td><%=ProductList.get(i).getSupplier()%></td>
 												<td><a
-													href="/Megathlon/ProductEdit?productID=<%=ProductList.get(i).getProductID()%>"
+													href="/Megathlon/ProductEdit?productID=<%=ProductList.get(i).getProductID()%>&brandName=<%=ProductList.get(i).getBrand()%>&supplierName=<%=ProductList.get(i).getSupplier()%>"
 													class="btn btn-primary btn-lg btn-block btn-sm m-1">Edit</a>
 													<form method="POST" action="/Megathlon/ProductList">
 														<input type="hidden" name="productID"

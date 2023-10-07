@@ -8,8 +8,10 @@ public class Product {
 	private double Price;
 	private int Quantity;
 	private String Brand;
+	private int BrandID;
 	private String Supplier;
 	private String ProductImage;
+	
 	
 	public Product () {}
 	
@@ -125,6 +127,14 @@ public class Product {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
+	}
+
+	public int getBrandID() {
+		return BrandID;
+	}
+
+	public void setBrandID(int brandID) {
+		BrandID = brandID;
 	}
 
 }

@@ -25,6 +25,145 @@
 <body class="hold-transition sidebar-mini">
 	<div class="wrapper">
 		<!-- Content Wrapper. Contains page content -->
+		<!-- Navbar -->
+		<nav
+			class="main-header navbar navbar-expand navbar-white navbar-light">
+			<!-- Left navbar links -->
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link" data-widget="pushmenu"
+					href="#"><i class="fas fa-bars"></i></a></li>
+				<li class="nav-item d-none d-sm-inline-block"><a
+					href="../../index3.html" class="nav-link">Home</a></li>
+				<li class="nav-item d-none d-sm-inline-block"><a href="#"
+					class="nav-link">Contact</a></li>
+			</ul>
+
+			<!-- Right navbar links -->
+			<ul class="navbar-nav ml-auto">
+				<!-- Navbar Search -->
+				<li class="nav-item"><a class="nav-link"
+					data-widget="navbar-search" href="#" role="button"> <i
+						class="fas fa-search"></i>
+				</a>
+					<div class="navbar-search-block">
+						<form class="form-inline">
+							<div class="input-group input-group-sm">
+								<input class="form-control form-control-navbar" type="search"
+									placeholder="Search" aria-label="Search">
+								<div class="input-group-append">
+									<button class="btn btn-navbar" type="submit">
+										<i class="fas fa-search"></i>
+									</button>
+									<button class="btn btn-navbar" type="button"
+										data-widget="navbar-search">
+										<i class="fas fa-times"></i>
+									</button>
+								</div>
+							</div>
+						</form>
+					</div></li>
+
+				<!-- Messages Dropdown Menu -->
+				<li class="nav-item dropdown"><a class="nav-link"
+					data-toggle="dropdown" href="#"> <i class="far fa-comments"></i>
+						<span class="badge badge-danger navbar-badge">3</span>
+				</a>
+					<div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+						<a href="#" class="dropdown-item"> <!-- Message Start -->
+							<div class="media">
+								<img src="../../dist/img/user1-128x128.jpg" alt="User Avatar"
+									class="img-size-50 mr-3 img-circle">
+								<div class="media-body">
+									<h3 class="dropdown-item-title">
+										Brad Diesel <span class="float-right text-sm text-danger"><i
+											class="fas fa-star"></i></span>
+									</h3>
+									<p class="text-sm">Call me whenever you can...</p>
+									<p class="text-sm text-muted">
+										<i class="far fa-clock mr-1"></i> 4 Hours Ago
+									</p>
+								</div>
+							</div> <!-- Message End -->
+						</a>
+						<div class="dropdown-divider"></div>
+						<a href="#" class="dropdown-item"> <!-- Message Start -->
+							<div class="media">
+								<img src="../../dist/img/user8-128x128.jpg" alt="User Avatar"
+									class="img-size-50 img-circle mr-3">
+								<div class="media-body">
+									<h3 class="dropdown-item-title">
+										John Pierce <span class="float-right text-sm text-muted"><i
+											class="fas fa-star"></i></span>
+									</h3>
+									<p class="text-sm">I got your message bro</p>
+									<p class="text-sm text-muted">
+										<i class="far fa-clock mr-1"></i> 4 Hours Ago
+									</p>
+								</div>
+							</div> <!-- Message End -->
+						</a>
+						<div class="dropdown-divider"></div>
+						<a href="#" class="dropdown-item"> <!-- Message Start -->
+							<div class="media">
+								<img src="../../dist/img/user3-128x128.jpg" alt="User Avatar"
+									class="img-size-50 img-circle mr-3">
+								<div class="media-body">
+									<h3 class="dropdown-item-title">
+										Nora Silvester <span class="float-right text-sm text-warning"><i
+											class="fas fa-star"></i></span>
+									</h3>
+									<p class="text-sm">The subject goes here</p>
+									<p class="text-sm text-muted">
+										<i class="far fa-clock mr-1"></i> 4 Hours Ago
+									</p>
+								</div>
+							</div> <!-- Message End -->
+						</a>
+						<div class="dropdown-divider"></div>
+						<a href="#" class="dropdown-item dropdown-footer">See All
+							Messages</a>
+					</div></li>
+				<!-- Notifications Dropdown Menu -->
+				<li class="nav-item dropdown"><a class="nav-link"
+					data-toggle="dropdown" href="#"> <i class="far fa-bell"></i> <span
+						class="badge badge-warning navbar-badge">15</span>
+				</a>
+					<div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+						<span class="dropdown-item dropdown-header">15
+							Notifications</span>
+						<div class="dropdown-divider"></div>
+						<a href="#" class="dropdown-item"> <i
+							class="fas fa-envelope mr-2"></i> 4 new messages <span
+							class="float-right text-muted text-sm">3 mins</span>
+						</a>
+						<div class="dropdown-divider"></div>
+						<a href="#" class="dropdown-item"> <i
+							class="fas fa-users mr-2"></i> 8 friend requests <span
+							class="float-right text-muted text-sm">12 hours</span>
+						</a>
+						<div class="dropdown-divider"></div>
+						<a href="#" class="dropdown-item"> <i class="fas fa-file mr-2"></i>
+							3 new reports <span class="float-right text-muted text-sm">2
+								days</span>
+						</a>
+						<div class="dropdown-divider"></div>
+						<a href="#" class="dropdown-item dropdown-footer">See All
+							Notifications</a>
+					</div></li>
+				<li class="nav-item"><a class="nav-link"
+					data-widget="fullscreen" href="#" role="button"> <i
+						class="fas fa-expand-arrows-alt"></i>
+				</a></li>
+				<li class="nav-item"><a class="nav-link"
+					data-widget="control-sidebar" data-slide="true" href="#"
+					role="button"> <i class="fas fa-th-large"></i>
+				</a></li>
+			</ul>
+		</nav>
+		<!-- /.navbar -->
+
+		
+		<%@include file="product-aside.jsp" %>
 		<div class="content-wrapper">
 			<!-- Content Header (Page header) -->
 			<section class="content-header">
@@ -49,7 +188,7 @@
 				<div class="container-fluid ">
 					<div class="row">
 						<!-- left column -->
-						<div class="col-md-6">
+						<div class="col-md-8 offset-2">
 							<!-- general form elements -->
 							<div class="card card-primary">
 								<div class="card-header">
@@ -57,34 +196,37 @@
 								</div>
 								<!-- /.card-header -->
 								<!-- form start -->
-								<form action="CreateProduct" method="POST">
+								<form action="CreateProduct" method="POST" id="product">
 									<div class="card-body">
+									<!-- Product Name -->
 										<div class="form-group">
-											<label for="exampleInputName">Product Name*</label> <input
-												type="text" name="productName" class="form-control"
-												id="exampleInputEmail1" placeholder="Enter Product Name"
-												required>
+											<label for="exampleInputName">Product Name*</label> 
+											<input type="text" name="productName" class="form-control"
+												id="productName_origin" placeholder="Enter Product Name"
+												required value="<%= (request.getAttribute("productName") == null) ?  "" : (String) request.getAttribute("productName") %>">
 										</div>
-										<div class="form-group">
-											<label for="exampleInputDescription">Description</label> <textarea name="description" class="form-control"
-												id="exampleInputPassword1"
-												placeholder="Enter Product Description"></textarea>
+										<!-- description -->
+										<div class="form-group"> 
+											<label for="exampleInputDescription">Description</label> 
+											<textarea name="description" class="form-control" id="description_origin"
+												placeholder="Enter Product Description"><%= (request.getAttribute("description") == null) ? "" : (String) request.getAttribute("description") %></textarea>
 										</div>
+										<!-- price -->
 										<div class="form-group">
 											<label for="exampleInputPrice">Price*</label>
 											<div class="input-group">
 												<div class="input-group-prepend">
 													<span class="input-group-text">RM</span>
 												</div>
-												<input type="text" name="price" class="form-control"
+												<input  value="<%= (double) request.getAttribute("price") %>" id="price_origin" type="number" name="price" class="form-control" step="0.01"
 													placeholder="0.00" required />
 											</div>
 										</div>
 										<!-- quantity -->
 										<div class="form-group">
 											<label for="exampleInputQuantity">Quantity</label> <input
-												type="text" name="quantity" class="form-control"
-												id="exampleInputPassword1" placeholder="Enter Quantity" required>
+												type="number" name="quantity" class="form-control"  value="<%= (int) request.getAttribute("quantity") %>"
+												id="quantity_origin" placeholder="Enter Quantity" required>
 										</div>
 										<!-- brand -->
 										<div class="form-group">
@@ -122,21 +264,6 @@
 												%>
 											</select>
 										</div>
-										
-										<div class="form-group">
-											<label for="exampleInputFile">Product Picture</label>
-											<div class="input-group">
-												<div class="custom-file">
-													<input type="file" name="productImage"
-														class="custom-file-input" id="exampleInputFile"> <label
-														class="custom-file-label" for="exampleInputFile">Choose
-														file</label>
-												</div>
-												<div class="input-group-append">
-													<span class="input-group-text">Upload</span>
-												</div>
-											</div>
-										</div>
 									</div>
 									<!-- /.card-body -->
 
@@ -151,7 +278,7 @@
 										<div class="modal fade" id="addBrand" tabindex="-1"
 											aria-labelledby="addBrand" aria-hidden="true">
 											<div class="modal-dialog">
-												<form action="AddBrand" method="POST">
+												<form action="AddBrand" method="POST" id="brand">
 													<div class="modal-content">
 														<!-- Modal Header -->
 														<div class="modal-header">
@@ -161,9 +288,14 @@
 														<!-- Modal body -->
 														<div class="modal-body">
 															<input type="text" id="inputField" name="BrandNew"
-																class="form-control" placeholder="Add Brand here...">
+																class="form-control" placeholder="Add Brand here..." required>
 														</div>
-
+														
+														<input type="hidden" id="productName" name="productName">
+														<input type="hidden" id="description" name="description">
+														<input type="hidden" id="price" name="price">
+														<input type="hidden" id="quantity" name="quantity">
+ 
 														<!-- Modal footer -->
 														<div class="modal-footer">
 															<!-- <button type="button" class="btn btn-secondary"
@@ -203,7 +335,30 @@
 		<!-- /.control-sidebar -->
 	</div>
 	<!-- ./wrapper -->
+	
+	<script>
+	// Function to copy data from product form to brand form
+	function copyDataToBrandForm() {
+	  // Get data from the product form
+	  var productName_origin = document.getElementById("productName_origin").value;
+	  var description_origin = document.getElementById("description_origin").value;
+	  var price_origin = document.getElementById("price_origin").value;
+	  var quantity_origin = document.getElementById("quantity_origin").value;
 
+	  // Set data in the brand form
+	  document.getElementById("productName").value = productName_origin;
+	  document.getElementById("description").value = description_origin;
+	  document.getElementById("price").value = price_origin;
+	  document.getElementById("quantity").value = quantity_origin;
+	}
+
+	// Add an event listener to the "Add new brand" button to copy data when clicked
+	document.getElementById("addBrand").addEventListener("click", function () {
+	  copyDataToBrandForm();
+	});
+
+		
+	</script>
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
 	<!-- Bootstrap 4 -->

@@ -53,7 +53,8 @@ public class ProductEdit extends HttpServlet {
 
 			ArrayList<Brand> brandList = new ArrayList<>();
 			ArrayList<Suppliers> supplierList = new ArrayList<>();
-			
+			String _brand = request.getParameter("brandName");
+			String _supplier = request.getParameter("supplierName");
 			Product product = new Product();
 
 			try {
@@ -99,7 +100,7 @@ public class ProductEdit extends HttpServlet {
 				}
 				
 				// RETRIEVE SUPPLIERLIST
-				query = "SELECT * FROM supplier";
+				query = "SELECT * FROM supplier WHERE status = 0";
 				preparedStatement = con.prepareStatement(query);
 				rs = preparedStatement.executeQuery();
 				while (rs.next()) {
@@ -122,6 +123,8 @@ public class ProductEdit extends HttpServlet {
 				e.printStackTrace();
 			}
 
+			request.setAttribute("brand", _brand);
+			request.setAttribute("supplier", _supplier);
 			request.setAttribute("product", product);
 			request.setAttribute("SupplierList", supplierList);
 			request.setAttribute("BrandList", brandList);
