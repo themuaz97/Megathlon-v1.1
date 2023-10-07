@@ -24,15 +24,15 @@ Fx
 ********************************************************************
 
 Muaz - product
-required dah buat except desc, img
+required dah buat except desc, img = dah buat
 
 validation for price,quantity
--> check string	
+-> check string	= checked
 
-Supplier, check for null
-
-
-product pic x fx
+Supplier, check for null = checked
 
 
-brand, supplier page edit tak fx
+product pic x fx = dah buang sebab tak sempat
+
+
+brand, supplier page edit tak fx = dah function
