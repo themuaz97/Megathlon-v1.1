@@ -97,10 +97,11 @@ public class ProductList extends HttpServlet {
 					//add brand to supplierlist
 					int supplierID = rs.getInt("supplierId");
 					String supplierName = rs.getString("supplierName");
+					String supplierEmail = rs.getString("supplierEmail");
 					String supplierContact = rs.getString("supplierContact");
 					String supplierLocation = rs.getString("supplierLocation");
 					
-					Suppliers c = new Suppliers (supplierID, supplierName, supplierContact, supplierLocation);
+					Suppliers c = new Suppliers (supplierID, supplierName, supplierEmail, supplierContact, supplierLocation);
 					supplierList.add(c);
 				}
 				

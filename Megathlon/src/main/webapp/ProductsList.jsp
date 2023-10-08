@@ -201,12 +201,24 @@
 							<!-- general form elements -->
 							<div class="card card-primary">
 								<div class="card-header">
-									<h3 class="card-title">Products</h3>
+									<div class="d-flex justify-content-between">
+										<h3 class="card-title my-auto">Supplier</h3>
+										<div class="row d-flex justify-content-end">
+											<div class="input-group input-group-sm col-12" >
+						                     	<input type="text" id="searchInput" placeholder="Search..."class="form-control float-right" onchange="searchTable()">	 
+						                        <div class="input-group-append">
+						                          <button onclick="searchTable()" class="btn btn-default">
+						                            <i class="fas fa-search"></i>
+						                          </button>
+						                        </div>
+						                     </div>
+										</div>
+									</div>
 								</div>
 								<!-- /.card-header -->
 								<!-- form start -->
 								<div>
-									<table class="table">
+									<table class="table" id="dataTable">
 										<thead class="thead-light">
 											<tr>
 												<th scope="col" style="width: fit-content">No</th>
@@ -292,6 +304,31 @@
 	<!-- <script src="js/bs-custom-file-input.min.js"></script> -->
 	<!-- AdminLTE App -->
 	<script src="js/adminlte.min.js"></script>
+	<script>
+	function searchTable() {
+		  var input, filter, table, tr, td, i, j, txtValue;
+		  input = document.getElementById('searchInput');
+		  filter = input.value.toLowerCase();
+		  table = document.getElementById('dataTable');
+		  tr = table.getElementsByTagName('tr');
+
+		  for (i = 1; i < tr.length; i++) { // Start from 1 to skip the header row
+		    td = tr[i].getElementsByTagName('td');
+		    let found = false;
+		    for (j = 0; j < td.length; j++) {
+		      if (td[j]) {
+		        txtValue = td[j].textContent || td[j].innerText;
+		        if (txtValue.toLowerCase().indexOf(filter) > -1) {
+		          found = true;
+		          break;
+		        }
+		      }
+		    }
+		    tr[i].style.display = found ? '' : 'none';
+		  }
+		}
+
+	</script>
 
 	<!-- Page specific script -->
 	<script>
