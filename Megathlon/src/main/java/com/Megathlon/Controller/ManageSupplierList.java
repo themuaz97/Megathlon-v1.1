@@ -99,6 +99,7 @@ public class ManageSupplierList extends HttpServlet {
 			
 			int supplierID = Integer.parseInt(request.getParameter("supplierID"));
 			String name = request.getParameter("supplierName");
+			String email = request.getParameter("supplierEmail");
 			String contact = request.getParameter("supplierContact");
 			String location = request.getParameter("supplierLocation");
 
@@ -113,14 +114,15 @@ public class ManageSupplierList extends HttpServlet {
 				// Run query
 				String query = "UPDATE " 
 								+ "supplier " 
-								+ "SET supplierName = ?, supplierContact = ?, supplierLocation = ? "
+								+ "SET supplierName = ?, supplierEmail = ?, supplierContact = ?, supplierLocation = ? "
 								+ "WHERE supplierID = ?";
 
 				PreparedStatement preparedStatement = con.prepareStatement(query);
 				preparedStatement.setString(1, name);
-				preparedStatement.setString(2, contact);
-				preparedStatement.setString(3, location);
-				preparedStatement.setInt(4, supplierID);
+				preparedStatement.setString(2, email);
+				preparedStatement.setString(3, contact);
+				preparedStatement.setString(4, location);
+				preparedStatement.setInt(5, supplierID);
 
 				preparedStatement.executeUpdate();
 

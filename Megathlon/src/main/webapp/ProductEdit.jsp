@@ -17,13 +17,23 @@
 <!-- Google Font: Source Sans Pro -->
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+
+
+<!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/52adbacfd8.js"
+	crossorigin="anonymous"></script>
+
 <!-- Theme style -->
 <link rel="stylesheet" href="css/adminlte.min.css">
 </head>
 <body class="hold-transition sidebar-mini">
 	<div class="wrapper">
+
 	
 	<%@include file="product-aside.jsp" %>
+
+		<%@include file="../inc/NavBar.jsp"%>
+
 		<!-- Content Wrapper. Contains page content -->
 		<div class="content-wrapper">
 			<!-- Content Header (Page header) -->
@@ -141,7 +151,11 @@
 
 									<div class="card-footer">
 										<input type="hidden" name="productID"
+
 											value="<%=product.getProductID()%>">
+
+											value="<%=ProductList.get(i).getProductID()%>">
+
 										<button type="submit" class="btn btn-primary float-right">Update</button>
 									</div>
 	

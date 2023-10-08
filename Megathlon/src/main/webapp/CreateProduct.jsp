@@ -1,7 +1,7 @@
 <%@page import="java.util.ArrayList"%>
 
 <%@page import="com.Megathlon.Beans.Brand"%>
-<%@page import ="com.Megathlon.Beans.Suppliers" %>
+<%@page import="com.Megathlon.Beans.Suppliers"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +13,8 @@
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 <!-- Font Awesome -->
-<script src="https://kit.fontawesome.com/52adbacfd8.js" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/52adbacfd8.js"
+	crossorigin="anonymous"></script>
 <!-- Theme style -->
 <link rel="stylesheet" href="css/adminlte.min.css">
 <link
@@ -21,7 +22,9 @@
 	rel="stylesheet"
 	integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
 	crossorigin="anonymous">
+<link rel="stylesheet" href="css/OverlayScrollbars.min.css">
 </head>
+
 <body class="hold-transition sidebar-mini">
 	<div class="wrapper">
 		<!-- Content Wrapper. Contains page content -->
@@ -164,6 +167,13 @@
 
 		
 		<%@include file="product-aside.jsp" %>
+
+<body class="hold-transition sidebar-mini layout-fixed">
+
+	<div class="wrapper">
+		<%@include file="../inc/NavBar.jsp"%>
+	
+
 		<div class="content-wrapper">
 			<!-- Content Header (Page header) -->
 			<section class="content-header">
@@ -205,11 +215,19 @@
 												id="productName_origin" placeholder="Enter Product Name"
 												required value="<%= (request.getAttribute("productName") == null) ?  "" : (String) request.getAttribute("productName") %>">
 										</div>
+
 										<!-- description -->
 										<div class="form-group"> 
 											<label for="exampleInputDescription">Description</label> 
 											<textarea name="description" class="form-control" id="description_origin"
 												placeholder="Enter Product Description"><%= (request.getAttribute("description") == null) ? "" : (String) request.getAttribute("description") %></textarea>
+
+										<div class="form-group">
+											<label for="exampleInputDescription">Description</label>
+											<textarea name="description" class="form-control"
+												id="exampleInputPassword1"
+												placeholder="Enter Product Description"></textarea>
+
 										</div>
 										<!-- price -->
 										<div class="form-group">
@@ -244,15 +262,17 @@
 												%>
 											</select>
 											<!-- Button trigger modal -->
-										<button type="button" class="btn btn-primary my-2"
-											data-bs-toggle="modal" data-bs-target="#addBrand">Add
-											new brand</button>
+											<button type="button" class="btn btn-primary my-2"
+												data-bs-toggle="modal" data-bs-target="#addBrand">Add
+												new brand</button>
 										</div>
+
 										<!-- supplier list  -->
 										<div class="form-group">
 											<label>Supplier*</label> <select class="form-control custom-select"
 												name="supplier" required>
-												<option value="" disabled selected hidden>Select Supplier</option>
+												<option value="" disabled selected hidden>Select
+													Supplier</option>
 												<%
 												ArrayList<Suppliers> SupplierList = (ArrayList<Suppliers>) request.getAttribute("SupplierList");
 												for (int i = 0; i < SupplierList.size(); ++i) {
@@ -262,6 +282,7 @@
 												<%
 												}
 												%>
+
 											</select>
 										</div>
 									</div>
@@ -275,6 +296,7 @@
 								</form>
 							</div>
 							<!-- inside modal -->
+
 										<div class="modal fade" id="addBrand" tabindex="-1"
 											aria-labelledby="addBrand" aria-hidden="true">
 											<div class="modal-dialog">
@@ -299,15 +321,35 @@
 														<!-- Modal footer -->
 														<div class="modal-footer">
 															<!-- <button type="button" class="btn btn-secondary"
+
+							<div class="modal fade" id="addBrand" tabindex="-1"
+								aria-labelledby="addBrand" aria-hidden="true">
+								<div class="modal-dialog">
+									<form action="AddBrand" method="POST">
+										<div class="modal-content">
+											<!-- Modal Header -->
+											<div class="modal-header">
+												<h4 class="modal-title">Add new brand</h4>
+												<!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+											</div>
+											<!-- Modal body -->
+											<div class="modal-body">
+												<input type="text" id="inputField" name="BrandNew"
+													class="form-control" placeholder="Add Brand here...">
+											</div>
+
+											<!-- Modal footer -->
+											<div class="modal-footer">
+												<!-- <button type="button" class="btn btn-secondary"
+
 																data-dismiss="modal">Close</button> -->
-															<button type="submit" class="btn btn-primary"
-																id="submitBtn">Add</button>
-														</div>
-													</div>
-												</form>
+												<button type="submit" class="btn btn-primary" id="submitBtn">Add</button>
 											</div>
 										</div>
-							
+									</form>
+								</div>
+							</div>
+
 							<!-- /.card -->
 						</div>
 						<!-- /.card-body -->
@@ -362,12 +404,15 @@
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
 	<!-- Bootstrap 4 -->
-	<script src="/js/bootstrap.bundle.min.js"></script>
+	<script src="js/bootstrap.bundle.min.js"></script>
 	<!-- bs-custom-file-input -->
 	<!-- <script src="plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
- -->	<!-- AdminLTE App -->
+ -->
+	<!-- AdminLTE App -->
 	<script src="js/adminlte.min.js"></script>
-	
+	<!-- overlayScrollbars -->
+	<script src="js/jquery.overlayScrollbars.min.js"></script>
+
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"

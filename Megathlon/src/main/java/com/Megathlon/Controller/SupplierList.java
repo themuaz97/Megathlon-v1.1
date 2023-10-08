@@ -62,10 +62,11 @@ public class SupplierList extends HttpServlet {
 					
 					int id = resultSet.getInt("supplierID");
 					String name = resultSet.getString("supplierName");
+					String email = resultSet.getString("supplierEmail");
 					String contact = resultSet.getString("supplierContact");
 					String location = resultSet.getString("supplierLocation");
 					
-					Suppliers supplier = new Suppliers (id, name, contact, location);
+					Suppliers supplier = new Suppliers (id, name, email, contact, location);
 					
 					supplierlist.add(supplier);
 				}

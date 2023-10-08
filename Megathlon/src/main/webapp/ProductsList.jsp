@@ -24,8 +24,9 @@
 <link rel="stylesheet" href="css/adminlte.min.css">
 </head>
 
-<body class="hold-transition sidebar-mini">
+<body class="hold-transition sidebar-mini layout-fixed">
 	<div class="wrapper">
+
 		<!-- Navbar -->
 		<nav
 			class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -166,6 +167,9 @@
 		
 		<%@include file="product-aside.jsp" %>
 
+
+		<%@include file="../inc/NavBar.jsp"%>
+
 		<!-- Content Wrapper. Contains page content -->
 		<div class="content-wrapper">
 			<!-- Content Header (Page header) -->
@@ -231,7 +235,11 @@
 												<td><%=ProductList.get(i).getBrand()%></td>
 												<td><%=ProductList.get(i).getSupplier()%></td>
 												<td><a
+
 													href="/Megathlon/ProductEdit?productID=<%=ProductList.get(i).getProductID()%>&brandName=<%=ProductList.get(i).getBrand()%>&supplierName=<%=ProductList.get(i).getSupplier()%>"
+
+													href="/Megathlon/ProductEdit?productID=<%=ProductList.get(i).getProductID()%>"
+
 													class="btn btn-primary btn-lg btn-block btn-sm m-1">Edit</a>
 													<form method="POST" action="/Megathlon/ProductList">
 														<input type="hidden" name="productID"

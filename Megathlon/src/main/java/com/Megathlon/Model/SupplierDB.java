@@ -14,8 +14,8 @@ public class SupplierDB {
 		Connection con = db.getCon();
 		try {
 			Statement stat = con.createStatement();
-			String query = "INSERT INTO supplier (supplierName, supplierContact, supplierLocation) VALUES ('"
-					+ rb.getSupplierName() + "', '" + rb.getSupplierContact() + "', '" + rb.getSupplierLocation() + "')";
+			String query = "INSERT INTO supplier (supplierName, supplierEmail, supplierContact, supplierLocation) VALUES ('"
+					+ rb.getSupplierName() + "', '" + rb.getSupplierEmail() + "', '" + rb.getSupplierContact() + "', '" + rb.getSupplierLocation() + "')";
 
 			stat.executeUpdate(query);
 			s1 = "Data Insert Successfully";

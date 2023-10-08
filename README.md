@@ -1,6 +1,14 @@
 # Megathlon_new
 Project Sports Inventory System
 
+Kamil - account
+
+role for every page
+validation for remove of admin
+validation for remove of staff
+add page for add/remove admin,staff
+
+******************************************************************
 Naim - supplier
 
 validation add supplier form
